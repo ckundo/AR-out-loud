@@ -37,11 +37,11 @@ The sample `ViewController` class manages the AR session and displays AR overlay
 ``` swift
 func session(_ session: ARSession, didUpdate frame: ARFrame) {
     // Do not enqueue other buffers for processing while another Vision task is still running.
-    // The camera stream has only a finite amount of buffers available; holding too many buffers for analyzis would starve the camera.
+    // The camera stream has only a finite amount of buffers available; holding too many buffers for analysis would starve the camera.
     guard currentBuffer == nil, case .normal = frame.camera.trackingState else {
         return
     }
-
+    
     // Retain the image buffer for Vision processing.
     self.currentBuffer = frame.capturedImage
     classifyCurrentImage()
@@ -61,13 +61,13 @@ let orientation = CGImagePropertyOrientation(UIDevice.current.orientation)
 
 let requestHandler = VNImageRequestHandler(cvPixelBuffer: currentBuffer!, orientation: orientation)
 visionQueue.async {
-	do {
-		// Release the pixel buffer when done, allowing the next buffer to be processed.
-		defer { self.currentBuffer = nil }
-		try requestHandler.perform([self.classificationRequest])
-	} catch {
-		print("Error: Vision request failed with error \"\(error)\"")
-	}
+    do {
+        // Release the pixel buffer when done, allowing the next buffer to be processed.
+        defer { self.currentBuffer = nil }
+        try requestHandler.perform([self.classificationRequest])
+    } catch {
+        print("Error: Vision request failed with error \"\(error)\"")
+    }
 }
 ```
 [View in Source](x-source-tag://ClassifyCurrentImage)
@@ -89,11 +89,11 @@ First, a tap gesture recognizer fires the [`placeLabelAtLocation(sender:)`](x-so
     let hitLocationInView = sender.location(in: sceneView)
     let hitTestResults = sceneView.hitTest(hitLocationInView, types: [.featurePoint, .estimatedHorizontalPlane])
     if let result = hitTestResults.first {
-
+        
         // Add a new anchor at the tap location.
         let anchor = ARAnchor(transform: result.worldTransform)
         sceneView.session.add(anchor: anchor)
-
+        
         // Track anchor ID to associate text with the anchor after ARKit creates a corresponding SKNode.
         anchorLabels[anchor.identifier] = identifierString
     }

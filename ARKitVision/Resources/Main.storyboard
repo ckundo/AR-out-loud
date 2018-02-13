@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14092" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14081.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,10 +39,10 @@
                         <constraints>
                             <constraint firstItem="B6f-8k-vfK" firstAttribute="trailing" secondItem="9C1-uQ-ecX" secondAttribute="trailing" id="FRK-rs-yMF"/>
                             <constraint firstItem="KDf-aN-SqQ" firstAttribute="leading" secondItem="B6f-8k-vfK" secondAttribute="leading" id="Xhr-Qw-9Nd"/>
-                            <constraint firstItem="B6f-8k-vfK" firstAttribute="bottom" secondItem="9C1-uQ-ecX" secondAttribute="bottom" id="YDs-dv-OTb"/>
+                            <constraint firstAttribute="bottom" secondItem="9C1-uQ-ecX" secondAttribute="bottom" id="YDs-dv-OTb"/>
                             <constraint firstItem="B6f-8k-vfK" firstAttribute="trailing" secondItem="KDf-aN-SqQ" secondAttribute="trailing" id="nfZ-3N-fjn"/>
                             <constraint firstItem="9C1-uQ-ecX" firstAttribute="leading" secondItem="B6f-8k-vfK" secondAttribute="leading" id="tL2-7i-pR4"/>
-                            <constraint firstItem="B6f-8k-vfK" firstAttribute="top" secondItem="9C1-uQ-ecX" secondAttribute="top" constant="20" id="wWJ-9r-hSp"/>
+                            <constraint firstAttribute="top" secondItem="9C1-uQ-ecX" secondAttribute="top" id="wWJ-9r-hSp"/>
                             <constraint firstItem="KDf-aN-SqQ" firstAttribute="top" secondItem="B6f-8k-vfK" secondAttribute="top" id="yPf-a2-fC7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B6f-8k-vfK"/>
