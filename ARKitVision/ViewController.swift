@@ -246,17 +246,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ARSKViewDel
     }
 
     private func restartSession() {
-        anchorLabels = [UUID: String]()
         statusViewController.cancelAllScheduledMessages()
-        
-        guard let sceneView = self.view as? ARSKView else {
-            return
-        }
+        statusViewController.showMessage("RESTARTING SESSION")
+
+        anchorLabels = [UUID: String]()
         
         let configuration = ARWorldTrackingConfiguration()
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-        
-        statusViewController.showMessage("RESTARTING SESSION")
     }
     
     // MARK: - Error handling
