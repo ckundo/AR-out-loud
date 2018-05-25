@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ARSKViewDel
     
     // The view controller that displays the status and "restart experience" UI.
     private lazy var statusViewController: StatusViewController = {
-        return childViewControllers.lazy.flatMap({ $0 as? StatusViewController }).first!
+        return children.lazy.compactMap({ $0 as? StatusViewController }).first!
     }()
     
     // MARK: - View controller lifecycle
