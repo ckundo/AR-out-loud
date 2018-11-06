@@ -154,6 +154,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ARSKViewDel
         }
         let message = String(format: "Detected \(self.identifierString) with %.2f", self.confidence * 100) + "% confidence"
         statusViewController.showMessage(message)
+
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: self.identifierString)
+        synthesizer.speak(utterance)
     }
     
     // MARK: - Tap gesture handler & ARSKViewDelegate
