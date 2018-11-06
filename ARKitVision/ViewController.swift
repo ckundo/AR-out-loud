@@ -155,9 +155,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ARSKViewDel
         let message = String(format: "Detected \(self.identifierString) with %.2f", self.confidence * 100) + "% confidence"
         statusViewController.showMessage(message)
 
-        let synthesizer = AVSpeechSynthesizer()
-        let utterance = AVSpeechUtterance(string: self.identifierString)
-        synthesizer.speak(utterance)
+        if self.identifierString.lowercased().range(of: "chair") != nil {
+          let alert = UIAlertController(title: "Found", message: "Detected \(self.identifierString)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in NSLog("The \"OK\" alert occured.")}))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Tap gesture handler & ARSKViewDelegate
