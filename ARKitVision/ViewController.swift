@@ -160,6 +160,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ARSKViewDel
         guard !self.identifierString.isEmpty else {
           return // No object was classified.
         }
+
+        let synthesizer = AVSpeechSynthesizer()
+          let utterance = AVSpeechUtterance(string: self.identifierString)
+          synthesizer.speak(utterance)
       }
   }
 
